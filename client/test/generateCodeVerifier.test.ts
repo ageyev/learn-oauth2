@@ -17,4 +17,3 @@ Deno.test("Code verifier should be base64url encoded string string >=43 and <=12
         {urlSafe: true}
     ));
 });
-
