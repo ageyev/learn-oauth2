@@ -1,0 +1,64 @@
+{
+  "version": "2",
+  "remote": {
+    "https://deno.land/std@0.153.0/encoding/base64.ts": "c57868ca7fa2fbe919f57f88a623ad34e3d970d675bdc1ff3a9d02bba7409db2",
+    "https://deno.land/std@0.153.0/encoding/base64url.ts": "a5f82a9fa703bd85a5eb8e7c1296bc6529e601ebd9642cc2b5eaa6b38fa9e05a",
+    "https://deno.land/std@0.187.0/_util/asserts.ts": "178dfc49a464aee693a7e285567b3d0b555dc805ff490505a8aae34f9cfb1462",
+    "https://deno.land/std@0.187.0/crypto/_fnv/fnv32.ts": "e4649dfdefc5c987ed53c3c25db62db771a06d9d1b9c36d2b5cf0853b8e82153",
+    "https://deno.land/std@0.187.0/crypto/_fnv/fnv64.ts": "bfa0e4702061fdb490a14e6bf5f9168a22fb022b307c5723499469bfefca555e",
+    "https://deno.land/std@0.187.0/crypto/_fnv/mod.ts": "f956a95f58910f223e420340b7404702ecd429603acd4491fa77af84f746040c",
+    "https://deno.land/std@0.187.0/crypto/_fnv/util.ts": "accba12bfd80a352e32a872f87df2a195e75561f1b1304a4cb4f5a4648d288f9",
+    "https://deno.land/std@0.187.0/crypto/_wasm/lib/deno_std_wasm_crypto.generated.mjs": "bdd70a6183c6bdabc086ec2a5f828c86711b4201f1ba7954fc78385a664e8fae",
+    "https://deno.land/std@0.187.0/crypto/_wasm/mod.ts": "e2df88236fc061eac7a89e8cb0b97843f5280b08b2a990e473b7397a3e566003",
+    "https://deno.land/std@0.187.0/crypto/crypto.ts": "9895c267ed0107ef613244f6a88cef40a21da159d52b5d90aceca46fd2684bb1",
+    "https://deno.land/std@0.187.0/crypto/timing_safe_equal.ts": "0fae34ee02264f309ae0b6e54e9746a7aba3996e5454903ed106967a7a9ef665",
+    "https://deno.land/std@0.187.0/crypto/to_hash_string.ts": "6927c768f3e373a1be4a31555a45ccecf7bd413105455cc334ad3f908cfa986f",
+    "https://deno.land/std@0.187.0/encoding/base64.ts": "144ae6234c1fbe5b68666c711dc15b1e9ee2aef6d42b3b4345bf9a6c91d70d0d",
+    "https://deno.land/std@0.187.0/encoding/hex.ts": "b4b1a7cb678745b0bf181ed8cf2498c7be00d121a7de244b752fbf9c7d9c48cd",
+    "https://deno.land/std@0.187.0/fmt/colors.ts": "d67e3cd9f472535241a8e410d33423980bec45047e343577554d3356e1f0ef4e",
+    "https://deno.land/std@0.187.0/testing/_diff.ts": "1a3c044aedf77647d6cac86b798c6417603361b66b54c53331b312caeb447aea",
+    "https://deno.land/std@0.187.0/testing/_format.ts": "a69126e8a469009adf4cf2a50af889aca364c349797e63174884a52ff75cf4c7",
+    "https://deno.land/std@0.187.0/testing/asserts.ts": "e16d98b4d73ffc4ed498d717307a12500ae4f2cbe668f1a215632d19fcffc22f",
+    "https://deno.land/std@0.83.0/async/deferred.ts": "ecdb71319e164ec4ace5a44e3ee991b52c21bfc19e498acdf8eccdc0b1184f70",
+    "https://deno.land/std@0.83.0/async/delay.ts": "35957d585a6e3dd87706858fb1d6b551cb278271b03f52c5a2cb70e65e00c26a",
+    "https://deno.land/std@0.83.0/async/mod.ts": "39f2602a005805dd1e6b9da4ee5391b14d15e8fec4fa5494a6165c599911d746",
+    "https://deno.land/std@0.83.0/async/mux_async_iterator.ts": "2532c6f448fda34db7ab9504746db671c32425dd4ffa96eeb9df744c3038c106",
+    "https://deno.land/std@0.83.0/async/pool.ts": "a499691231d8c249f044f69d204b479ad3af7f115e0b37342829eff076bc2450",
+    "https://deno.land/std@0.83.0/encoding/base64.ts": "b1d8f99b778981548457ec74bc6273ad785ffd6f61b2233bd5b30925345b565d",
+    "https://deno.land/std@0.83.0/encoding/hex.ts": "fa01b16414c8e04caa0055f2d8c4610a3ec714a04315d0afe6956e07d501e11d",
+    "https://deno.land/std@0.83.0/fmt/colors.ts": "c5665c66f1a67228f21c5989bbb04b36d369b98dd7ceac06f5e26856c81c2531",
+    "https://deno.land/std@0.83.0/hash/_wasm/hash.ts": "005f64c4d9343ecbc91e0da9ae5e800f146c20930ad829bbb872c5c06bd89c5f",
+    "https://deno.land/std@0.83.0/hash/_wasm/wasm.js": "fa27095b91e6268682100997577f1d3478beab5b045777e27ff7b2b5d19c8fdc",
+    "https://deno.land/std@0.83.0/hash/hasher.ts": "099c9e2a91b9f106b9f01379705e17e7d9de392ee1ea2b8684a2adfa82ac3bfc",
+    "https://deno.land/std@0.83.0/hash/mod.ts": "e764a6a9ab2f5519a97f928e17cc13d984e3dd5c7f742ff9c1c8fb3114790f0c",
+    "https://deno.land/std@0.83.0/node/_crypto/constants.ts": "f2426a2569c64b8fab49eddd58cb8a4cef4937cc41358ac0a9ad268435371832",
+    "https://deno.land/std@0.83.0/node/_crypto/pbkdf2.ts": "a5f4d281abb77ad97e89ee4e027e89f866773f8286b3a276fca70666997021e4",
+    "https://deno.land/std@0.83.0/node/_crypto/randomBytes.ts": "e6c1865cde3d609165068e2c48bf7f06dbb4cecc6aa88b7f20b6cccf82cf00b9",
+    "https://deno.land/std@0.83.0/node/_crypto/types.ts": "a30809e13b3365d3d7ccd91cc48206f60bc3b8f25df15671b93c252818aa86d2",
+    "https://deno.land/std@0.83.0/node/_errors.ts": "d56c7161f0734874e14547e11301749965b295aadeceaed3409911b725ea9972",
+    "https://deno.land/std@0.83.0/node/_util/_util_callbackify.ts": "65fa4d9c1fdbbf5bf13fb870da31412b3de6490d06b20bc8832e97559f6c97e3",
+    "https://deno.land/std@0.83.0/node/_util/_util_promisify.ts": "d0503d7c39367f1f026e60da6b979cf43e79feeeaef19c7b2d96d29e878757e9",
+    "https://deno.land/std@0.83.0/node/_util/_util_types.ts": "217a4c1055289f25d1dc9097638aeeb7662136d34e6f49df5f27038872dc8d6f",
+    "https://deno.land/std@0.83.0/node/_utils.ts": "e87f88c2f6e235d724cc68e9d835d6b48a9ec9c6bfa3ea173bbd94ac5d1109d9",
+    "https://deno.land/std@0.83.0/node/buffer.ts": "d8ea34073b5f1cee77e696d4be110e4e73e8fec55b20cd974b798cf42b71df6c",
+    "https://deno.land/std@0.83.0/node/crypto.ts": "ac8be8bec6973723579f98d3f81b0f949d52598c56985aac697532547e620823",
+    "https://deno.land/std@0.83.0/node/util.ts": "88e8ada68e6a9af044320544a0a08876ddc9aaf1c9c7b4e11bec7dd4dc0db252",
+    "https://deno.land/std@0.83.0/testing/_diff.ts": "9656b2dbe0a76684e705375fd03bfe0108e9e00845ccb9e47abff52f156fe4e8",
+    "https://deno.land/std@0.83.0/testing/asserts.ts": "a8d30ca52b1bf4f928c521e80b58d04ed3930b9507c598cfffd1ecedf3f6eaf2",
+    "https://deno.land/x/crypto_random_string@1.0.0/constants.ts": "834f718bc3e7bba4d19a28cbc9d289309c6c3db5d6486c300d509fffa42a75d6",
+    "https://deno.land/x/crypto_random_string@1.0.0/cryptoRandomString.ts": "23b1768e279c6aacdf40cab7d292e98023f228745984d844c2e7678ce9041441",
+    "https://deno.land/x/crypto_random_string@1.0.0/deps.ts": "c48743a2a5a5f333b26c7e3625008ef098cc5a36a6e4c6b9e0247fb7c33c161f",
+    "https://deno.land/x/crypto_random_string@1.0.0/mod.ts": "f5513407c5efa5d4d25a61965ad5a3cd62d0f7d57246fe8db4b8d2ef2a630380"
+  },
+  "npm": {
+    "specifiers": {
+      "validator": "validator@13.9.0"
+    },
+    "packages": {
+      "validator@13.9.0": {
+        "integrity": "sha512-B+dGG8U3fdtM0/aNK4/X8CXq/EcxU2WPrPEkJGslb47qyHsxmbggTWK0yEA4qnYVNF+nxNlN88o14hIcPmSIEA==",
+        "dependencies": {}
+      }
+    }
+  }
+}

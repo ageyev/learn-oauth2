@@ -10,4 +10,6 @@ As defined in ["The OAuth 2.0 Authorization Framework" (RFC 6749)](https://datat
 
 [The Nuts and Bolts of OAuth 2.0](https://www.udemy.com/course/oauth-2-simplified/): Covering OAuth 2.0, OpenID, PKCE, deprecated flows, JWTs, API Gateways, and scopes. By [Aaron Parecki](https://www.udemy.com/user/aaron-parecki-2/). 3.5 hours on-demand video.
 
-[Advanced OAuth Security](https://www.udemy.com/course/advanced-oauth-security/): Learn the high-security OAuth extensions described in FAPI: PAR, JAR, JARM, DPoP, Mutual TLS, and HTTP Signatures. By [Aaron Parecki](https://www.udemy.com/user/aaron-parecki-2/). 1.5 hours on-demand video.
+[Advanced OAuth Security](https://www.udemy.com/course/advanced-oauth-security/): Learn the high-security OAuth extensions described in FAPI: PAR, JAR, JARM, DPoP, Mutual TLS, and HTTP Signatures. By [Aaron Parecki](https://www.udemy.com/user/aaron-parecki-2/). 1.5 hours on-demand video. 
+
+[OAuth 2.0 Simplified](https://www.oauth.com/) by [Aaron Parecki](https://aaronparecki.com)
