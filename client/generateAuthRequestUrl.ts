@@ -11,17 +11,21 @@ interface AuthRequestUrlRequestParams {
     code_challenge: string
     code_challenge_method: string,
     scope?: string,
+    codeVerifierStr?: string,
+    codeChallengeStr?: string,
 }
 
 const generateAuthRequestUrl = async (
     authorizationEndpoint: string, // URL string, like "https://authorization-server.com/auth"
     client_id: string, // to tell auth server which app is making a request
     redirect_uri: string, // URL string, like "https://example-app.com/redirect"
-    scope?: string // like "photos" etc.
+    scope?: string, // like "photos" etc.
+    codeVerifierStr?: string,
+    codeChallengeStr?: string
 ) => {
 
-    const codeVerifier = generateCodeVerifier();
-    const codeChallenge = await generateCodeChallenge(codeVerifier);
+    const codeVerifier = codeVerifierStr || generateCodeVerifier();
+    const codeChallenge = codeChallengeStr || await generateCodeChallenge(codeVerifier);
 
     let requestParams: AuthRequestUrlRequestParams = {
         response_type: 'code',

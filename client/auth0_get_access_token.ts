@@ -1,0 +1,57 @@
+import auth0_authorization_request from "./auth0_authorization_request.ts";
+import generateCodeVerifier from "./generateCodeVerifier.ts";
+
+interface TokenResponse {
+    "access_token": string,
+    "expires_in": number,
+    "token_type": string
+}
+
+const auth0_get_access_token = async (): Promise<TokenResponse> => {
+
+    const url = Deno.env.get("AUTH0_OAUTH_TOKEN_URL");
+    if (!url) {
+        throw new Error("URL not found");
+    }
+
+    const codeVerifier = generateCodeVerifier();
+    const auth0AuthorizationRequestResult = await auth0_authorization_request(
+        true,
+        true,
+        codeVerifier
+    );
+
+    if (!auth0AuthorizationRequestResult || !auth0AuthorizationRequestResult.code) {
+        throw new Error("Authorization code request was not successful (null)")
+    }
+
+    const data = {
+        grant_type: 'authorization_code',
+        redirect_uri: 'https://example-app.com/redirect', // from course assignment https://oauth.school/exercise/web/
+        client_id: Deno.env.get("AUTH0_CLIENT_ID"),
+        client_secret: Deno.env.get("AUTH0_CLIENT_SECRET"),
+        code_verifier: codeVerifier, // state
+        code: auth0AuthorizationRequestResult.code, // authorizationCode
+    }
+
+    // on deno we can use fetch API https://deno.com/manual@v1.29.2/examples/fetch_data
+    // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+    const responseStr = await fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data), // body data type must match "Content-Type" header
+    });
+
+    const response = await responseStr.json(); // parses JSON response into native JavaScript objects
+
+    // console.log(response);
+
+    return response;
+
+}
+
+// deno run -A auth0_get_access_token.ts
+console.log(await auth0_get_access_token());
+export default auth0_get_access_token;
