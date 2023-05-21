@@ -3,6 +3,7 @@
 # A leading "**" followed by a slash means match in all directories.
 # https://git-scm.com/docs/gitignore
 **/.env
+**/screenshots/screenshot* 
 
 !/.idea/.gitignore
 

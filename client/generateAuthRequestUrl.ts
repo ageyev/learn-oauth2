@@ -10,7 +10,7 @@ interface AuthRequestUrlRequestParams {
     state: string,
     code_challenge: string
     code_challenge_method: string,
-    scope?: string,
+    scope?: string, // 'offline_access' if refresh token requested
     codeVerifierStr?: string,
     codeChallengeStr?: string,
 }
@@ -19,7 +19,7 @@ const generateAuthRequestUrl = async (
     authorizationEndpoint: string, // URL string, like "https://authorization-server.com/auth"
     client_id: string, // to tell auth server which app is making a request
     redirect_uri: string, // URL string, like "https://example-app.com/redirect"
-    scope?: string, // like "photos" etc.
+    scope?: string, // like "offline_access" to get refresh token, or "photos" etc.
     codeVerifierStr?: string,
     codeChallengeStr?: string
 ) => {
@@ -34,6 +34,9 @@ const generateAuthRequestUrl = async (
         state: codeVerifier,
         code_challenge: codeChallenge,
         code_challenge_method: 'S256',
+        // if used, 'scope' should be used here, in the authentication request url
+        // see: https://auth0.com/docs/secure/tokens/refresh-tokens/get-refresh-tokens
+        scope: scope,
     };
 
     if (scope) {

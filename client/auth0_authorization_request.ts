@@ -1,11 +1,11 @@
-import "https://deno.land/std@0.185.0/dotenv/load.ts";
+import "https://deno.land/std@0.187.0/dotenv/load.ts";
 
 // import puppeteer from 'npm:puppeteer';
 // - does not work, see:
 // https://github.com/puppeteer/puppeteer/issues/7115
 
 // https://github.com/ratson/puppeteer_plus
-import puppeteer from "https://deno.land/x/puppeteer_plus/mod.ts";
+import puppeteer from "https://deno.land/x/puppeteer_plus@0.15.0/mod.ts";
 
 import generateAuthRequestUrl from "./generateAuthRequestUrl.ts";
 import generateCodeVerifier from "./generateCodeVerifier.ts";
@@ -16,7 +16,8 @@ const auth0_authorization_request = async (
     useHeadless: boolean, // false or 'new' (instead of true)
     closeBrowserOnReturn: boolean,
     codeVerifierStr?: string,
-    codeChallengeStr?: string
+    codeChallengeStr?: string,
+    scope?: string,
 ) => {
 
     const authorizationEndpoint: string | undefined = Deno.env.get("AUTH0_OAUTH_AUTHORIZATION_URL");
@@ -35,7 +36,6 @@ const auth0_authorization_request = async (
     const codeVerifier = codeVerifierStr ? codeVerifierStr : generateCodeVerifier();
     const codeChallenge = codeChallengeStr ? codeChallengeStr : await generateCodeChallenge(codeVerifier);
 
-    const scope = undefined;
     const url = await generateAuthRequestUrl(
         authorizationEndpoint,
         client_id,
@@ -63,8 +63,17 @@ const auth0_authorization_request = async (
     const response = await page.goto(
         url.toString(),
         // https://cloudlayer.io/blog/puppeteer-waituntil-options/
-        {waitUntil: 'networkidle2'} // <<< !
+        {waitUntil: 'networkidle0'} // <<< !
     );
+
+    // https://pptr.dev/api/puppeteer.screenshotoptions
+    // await page.screenshot(
+    //     {
+    //         type: "png",
+    //         fullPage: true,
+    //         path: "./screenshots/screenshot" + Date.now().toString() + ".png"
+    //     }
+    // );
 
     // fill login form
     // https://www.scrapingbee.com/blog/submit-form-puppeteer/
@@ -79,6 +88,7 @@ const auth0_authorization_request = async (
 
     await page.type('input[id=username]', username);
     await page.type('input[id=password]', password);
+
     // await page.click('button[type=submit]');
     await page.evaluate(() => {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment

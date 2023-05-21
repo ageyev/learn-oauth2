@@ -1,6 +1,12 @@
 import {crypto} from "https://deno.land/std@0.187.0/crypto/crypto.ts";
 import {encode as base64urlEncode} from "https://deno.land/std@0.153.0/encoding/base64url.ts";
 
+/*
+* see:
+* https://auth0.com/docs/get-started/authentication-and-authorization-flow/call-your-api-using-the-authorization-code-flow-with-pkce#create-code-challenge
+*
+* */
+
 // see:
 // https://deno.land/std@0.187.0/crypto/to_hash_string.ts?s=toHashString#example_0
 
