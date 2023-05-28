@@ -3,8 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Auth Server</title>
+    <!--    <link rel="icon" type="image/x-icon" href="favicon.ico?">-->
+
+    <!-- You MUST include jQuery 3+ before Fomantic -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>
+    <script>
+        window.onload = () => {
+            // https://fomantic-ui.com/modules/tab.html#basic-tabs
+            $('.menu .item').tab()
+        }
+    </script>
+
 </head>
 <body>
-<p>Auth server</p>
+<div class="ui container">
+
+    <h1>Auth server</h1>
+    <div class="ui basic segment">
+
+        <div class="ui top attached tabular menu">
+            <a class="active item" data-tab="loginTab">Login</a>
+            <a class="item" data-tab="signUpTab">SignUp</a>
+        </div>
+
+        <div id="loginTab" data-tab="loginTab" class="ui bottom attached active tab segment">
+
+            <form id="loginForm" action="/login" method="post" class="ui form">
+                <input type="hidden" id="formActionLogin" name="formAction" value="login">
+                <div class="field">
+                    <label for="login-userName">Login:</label>
+                    <input type="text" id="login-userName" name="userName" autocomplete="username">
+                </div>
+                <div class="field">
+                    <label for="login-userPassword">Password:</label>
+                    <input type="password" id="login-userPassword" name="userPassword" autocomplete="password">
+                </div>
+                <input id="loginBtn" type="submit" value="Submit" class="ui button">
+            </form>
+        </div>
+
+        <div id="signUpTab" data-tab="signUpTab" class="ui bottom attached tab segment">
+            <form id="signUpForm" action="/register" method="post" class="ui form">
+                <input type="hidden" id="formActionSignup" name="formAction" value="signup">
+                <div class="field">
+                    <label for="signup-userName">Choose login:</label>
+                    <input type="text" id="signup-userName" name="userName" autocomplete="username">
+                </div>
+                <div class="field">
+                    <label for="signup-userPassword">Choose password:</label>
+                    <input type="password" id="signup-userPassword" name="userPassword" autocomplete="new-password">
+                </div>
+                <input id="signupBtn" type="submit" value="Submit" class="ui button">
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

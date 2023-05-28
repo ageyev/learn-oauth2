@@ -3,7 +3,6 @@ import "https://deno.land/std@0.187.0/dotenv/load.ts";
 // import puppeteer from 'npm:puppeteer';
 // - does not work, see:
 // https://github.com/puppeteer/puppeteer/issues/7115
-
 // https://github.com/ratson/puppeteer_plus
 import puppeteer from "https://deno.land/x/puppeteer_plus@0.15.0/mod.ts";
 
@@ -77,8 +76,11 @@ const auth0_authorization_request = async (
 
     // fill login form
     // https://www.scrapingbee.com/blog/submit-form-puppeteer/
+    // !!! API should skip user consent for applications flagged as First Party (see: Access Settings in API) !!!
     const username = Deno.env.get("AUTH0_APP_USER_NAME"); // nodejs: process.env.AUTH0_APP_USER_NAME;
     const password = Deno.env.get("AUTH0_APP_USER_PASSWORD"); // nodejs: process.env.AUTH0_APP_USER_PASSWORD;
+
+
     if (username && password) {
         //
     } else {
@@ -101,8 +103,6 @@ const auth0_authorization_request = async (
 
     const resultUrl = new URL(page.url());
 
-    // console.log(resultUrl.toString());
-
     if (closeBrowserOnReturn) {
         await browser.close();
     }
@@ -113,10 +113,6 @@ const auth0_authorization_request = async (
         resultUrl: resultUrl,
         code: resultUrl.searchParams.get("code")
     };
-
-    // console.log(result);
-    // console.log("codeVerifier:", codeVerifier);
-    // console.log(result.resultUrl.toString());
 
     return result;
 };

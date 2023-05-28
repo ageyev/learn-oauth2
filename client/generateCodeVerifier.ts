@@ -14,4 +14,3 @@ const generateCodeVerifier = (length?: number): string => {
 // console.log(generateCodeVerifier());
 
 export default generateCodeVerifier;
-

@@ -14,7 +14,6 @@ Deno.test("Should generate a valid URL for auth request", async () => {
         "client_id",
         'https://example-app.com/redirect',
     );
-    // console.log(url.toString());
     assert(validator.isURL(
         url.toString(),
         {require_protocol: true}

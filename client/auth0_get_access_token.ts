@@ -52,7 +52,7 @@ const auth0_get_access_token = async (
 
     // on deno we can use fetch API https://deno.com/manual@v1.29.2/examples/fetch_data
     // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-    const responseStr = await fetch(
+    const responseObj = await fetch(
         url,
         {
             method: "POST",
@@ -62,12 +62,16 @@ const auth0_get_access_token = async (
             body: JSON.stringify(data), // body data type must match "Content-Type" header
         });
 
-    const response = await responseStr.json(); // parses JSON response into native JavaScript objects
+    const response = await responseObj.json(); // parses JSON response into native JavaScript objects
 
     return response;
 
 }
 
 // deno run -A auth0_get_access_token.ts
-// console.log(await auth0_get_access_token());
+// console.log(await auth0_get_access_token(
+//     "offline_access",
+//     false,
+//     false
+// ));
 export default auth0_get_access_token;

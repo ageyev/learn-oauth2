@@ -1,5 +1,3 @@
-import generateRedirectUrl from "./generateRedirectUrl.ts";
-
 interface TokenResponse {
     token_type: string, // "Bearer"
     access_token: string,
@@ -26,8 +24,10 @@ const generateTokenResponse = (
     }
 
     if (refresh_token) {
-        resp = {...resp, refresh_token: resp}
+        resp = {...resp, refresh_token: refresh_token}
     }
 
     return resp;
 }
+
+export default generateTokenResponse;

@@ -12,7 +12,7 @@ import generateCodeVerifier from "../generateCodeVerifier.ts";
 import generateCodeChallenge from "../generateCodeChallenge.ts";
 import generateAuthRequestUrl from "../generateAuthRequestUrl.ts";
 
-Deno.test("Should generate correct url for Auth0 (with refresh token request)", async () => {
+Deno.test("Should generate correct authorization for Auth0", async () => {
 
     const authorizationEndpoint: string | undefined = Deno.env.get("AUTH0_OAUTH_AUTHORIZATION_URL");
     if (!authorizationEndpoint) {
@@ -30,7 +30,8 @@ Deno.test("Should generate correct url for Auth0 (with refresh token request)", 
     const codeVerifier = generateCodeVerifier();
     const codeChallenge = await generateCodeChallenge(codeVerifier);
 
-    const scope = "offline_access";
+    const scope = "offline_access"; // (with refresh token request)
+    // const scope = "create:photos+delete:photos";
 
     const url = await generateAuthRequestUrl(
         authorizationEndpoint,

@@ -1,6 +1,5 @@
 import querystring from "https://deno.land/std@0.171.0/node/querystring.ts";
 
-
 interface TokenRequestUrlRequestParams {
     grant_type: string, // like 'authorization_code'
     code: string, // code received from auth server

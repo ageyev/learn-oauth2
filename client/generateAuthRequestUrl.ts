@@ -13,6 +13,7 @@ interface AuthRequestUrlRequestParams {
     scope?: string, // 'offline_access' if refresh token requested
     codeVerifierStr?: string,
     codeChallengeStr?: string,
+    audience?: string
 }
 
 const generateAuthRequestUrl = async (
@@ -21,7 +22,8 @@ const generateAuthRequestUrl = async (
     redirect_uri: string, // URL string, like "https://example-app.com/redirect"
     scope?: string, // like "offline_access" to get refresh token, or "photos" etc.
     codeVerifierStr?: string,
-    codeChallengeStr?: string
+    codeChallengeStr?: string,
+    audience?: string
 ) => {
 
     const codeVerifier = codeVerifierStr || generateCodeVerifier();
@@ -37,6 +39,7 @@ const generateAuthRequestUrl = async (
         // if used, 'scope' should be used here, in the authentication request url
         // see: https://auth0.com/docs/secure/tokens/refresh-tokens/get-refresh-tokens
         scope: scope,
+        audience: audience
     };
 
     if (scope) {

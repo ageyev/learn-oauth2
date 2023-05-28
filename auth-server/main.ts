@@ -1,15 +1,35 @@
 import {Application, Router} from "https://deno.land/x/oak@v12.4.0/mod.ts";
+import testRoute from "./testRoute.ts";
+import urlSearchParamsObjToJSON from "./urlSearchParamsObjToJSON.ts";
 
-const port = 3000;
+const port = 3001;
 
 const router = new Router();
 const app = new Application();
 
-router.get("/test", (ctx) => {
-    ctx.response.headers.set("Content-Type", "application/json");
-    ctx.response.body = {
-        data: "test",
-    };
+let db = {};
+
+router.get("/test", testRoute);
+router.post("/test", testRoute);
+
+router.post('/login', async (ctx) => {
+    // https://deno.land/x/oak@v11.1.0/request.ts?s=Request
+    const request = ctx.request;
+    // https://deno.land/x/oak@v11.1.0/body.ts?s=Body
+    const requestBody = request.body({type: "form"});
+    // https://deno.land/api@v1.34.0?s=URLSearchParams
+    // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+    const formData = await requestBody.value;
+
+    console.log(urlSearchParamsObjToJSON(formData));
+
+});
+router.post('/register', async (ctx) => {
+    // https://deno.land/x/oak@v11.1.0/request.ts?s=Request
+    const request = ctx.request;
+    // https://deno.land/x/oak@v11.1.0/body.ts?s=Body
+    const requestBody = request.body();
+    console.log(requestBody);
 });
 
 app.use(router.routes());

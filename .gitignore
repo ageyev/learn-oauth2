@@ -4,6 +4,7 @@
 # https://git-scm.com/docs/gitignore
 **/.env
 **/screenshots/screenshot* 
+**/data/*
 
 !/.idea/.gitignore
 
