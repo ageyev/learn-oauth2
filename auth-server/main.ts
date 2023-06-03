@@ -2,7 +2,7 @@ import {Application, Router} from "https://deno.land/x/oak@v12.4.0/mod.ts";
 import testRoute from "./testRoute.ts";
 import urlSearchParamsObjToJSON from "./urlSearchParamsObjToJSON.ts";
 
-const port = 3001;
+const port = 3002;
 
 const router = new Router();
 const app = new Application();

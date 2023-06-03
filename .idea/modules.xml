@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/advanced-oauth-security-php-exercises.iml" filepath="$PROJECT_DIR$/advanced-oauth-security-php-exercises.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-server.iml" filepath="$PROJECT_DIR$/auth-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/client.iml" filepath="$PROJECT_DIR$/client.iml" />
       <module fileurl="file://$PROJECT_DIR$/learn-oath2.iml" filepath="$PROJECT_DIR$/learn-oath2.iml" />
