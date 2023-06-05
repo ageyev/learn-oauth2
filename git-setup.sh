@@ -1,5 +1,7 @@
 # (*) create .gitignore: node, backup, jetbrains, kate, linux, sublime text, windows, macos + build, .env
 
+# git remote add origin git@github.com:ageyev/learn-oauth2.git
+
 # touch .env
 # add .env to .gitignore
 # add values to .env
